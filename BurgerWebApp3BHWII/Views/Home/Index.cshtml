@@ -1,0 +1,42 @@
+﻿@model  List<Burger>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Das sind meine Burger</h1>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Invented</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    @{
+        foreach (var burger in Model)
+        {
+            
+      
+        
+        <tr>
+            <td>@(burger.BurgerId)</td>
+            <td>@(burger.Title)</td>
+            <td>@(burger.Description)</td>
+            <td>@(burger.InventedDate)</td>
+            <td>@(burger.Price)</td>
+            
+        </tr>
+        }
+    }
+    
+    
+    </tbody>
+    
+    
+</table>
