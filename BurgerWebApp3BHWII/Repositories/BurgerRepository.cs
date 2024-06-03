@@ -45,7 +45,19 @@ public class BurgerRepository
 
     public void CreateBurger(Burger burger)
     {
+        NpgsqlConnection myConnection = ConnectToDB();
         
+        using NpgsqlCommand cmd = new NpgsqlCommand(
+            "INSERT INTO Burger (Title, Description, Invented, Price) VALUES (:v1,:v2,:v3,:v4)", myConnection);
+        
+        cmd.Parameters.AddWithValue("v1", burger.Title);
+        cmd.Parameters.AddWithValue("v2", burger.Description);
+        cmd.Parameters.AddWithValue("v3", burger.InventedDate);
+        cmd.Parameters.AddWithValue("v4", burger.Price);
+        
+        int rowsAffected = cmd.ExecuteNonQuery();
+        
+        myConnection.Close();
     }
 
     public void DeleteBurger(int burgerId)

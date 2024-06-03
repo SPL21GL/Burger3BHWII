@@ -16,10 +16,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        BurgerRepository repo = new BurgerRepository();
-        List<Burger> myBurgers = repo.GetAllBurgers();
         
-        return View(myBurgers);
+        return View();
     }
 
     public IActionResult Privacy()

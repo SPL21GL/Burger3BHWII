@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Burger Übersicht";
+}
+
+<h1>Neuen Burger erstellen</h1>
+
+<form action="/Burger/SaveBurger" method="post" >
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Bezeichnung</td>
+            <td>Eingabe</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Title</td>
+            <td>
+                <input type="text" id="Title" name="Title">
+            </td>
+        </tr>
+        <tr>
+            <td>Beschreibung</td>
+            <td>
+                <input type="text" id="Description" name="Description">
+            </td>
+        </tr>
+        <tr>
+            <td>Datum</td>
+            <td>
+                <input type="date" id="InventedDate" name="InventedDate">
+            </td>
+        </tr>
+        <tr>
+            <td>Preis</td>
+            <td>
+                <input type="number" id="Price" name="Price">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="/Burger" class="btn btn-danger">Abbrechen</a>
+            </td>
+            <td>
+                <button class="btn btn-success" type="submit">Speichern</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    </form>
