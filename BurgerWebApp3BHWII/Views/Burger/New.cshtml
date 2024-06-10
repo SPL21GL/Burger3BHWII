@@ -1,10 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Burger Übersicht";
+    List<Kategorie> alleKategorien = (List<Kategorie>)ViewData["alleKategorien"];
 }
 
 <h1>Neuen Burger erstellen</h1>
 
-<form action="/Burger/SaveBurger" method="post" >
+<form action="/Burger/SaveBurger" method="post">
     <table class="table">
         <thead>
         <tr>
@@ -37,6 +38,21 @@
                 <input type="number" id="Price" name="Price">
             </td>
         </tr>
+        
+                <tr>
+                    <td>Kategorie</td>
+                    <td>
+                        <select id="kategorieid" name="kategorieid">
+                            @{
+                                foreach (var kategorie in alleKategorien)
+                                {
+                                    <option value="@(kategorie.kategorieid)">@(kategorie.title)</option>
+                                }
+                            }
+                        </select>
+                    </td>
+                </tr>
+        
         <tr>
             <td>
                 <a href="/Burger" class="btn btn-danger">Abbrechen</a>
@@ -48,4 +64,4 @@
         </tbody>
     </table>
 
-    </form>
+</form>

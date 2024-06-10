@@ -17,6 +17,11 @@ public class BurgerController : Controller
 
     public IActionResult New()
     {
+        KategorienRepository katRepo = new KategorienRepository();
+        List<Kategorie> alleKategorien = katRepo.GetAllKategorien();
+
+        ViewData["alleKategorien"] = alleKategorien;
+        
         return View();
     }
 
